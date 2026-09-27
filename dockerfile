@@ -1,5 +1,5 @@
-FROM nginx
-WORKDIR /usr/share/nginx/html
+FROM httpd
+WORKDIR /usr/local/apache2/htdocs/
 COPY index.html .
 EXPOSE 80
 MAINTAINER Suchandar
