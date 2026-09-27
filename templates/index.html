@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flask Container Demo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="card">
+    <span class="status">Container is healthy</span>
+    <h1>Flask application is running!</h1>
+    <p>This browser page is served by Flask and Gunicorn inside Docker.</p>
+    <p>Container hostname: <code>{{ hostname }}</code></p>
+  </main>
+</body>
+</html>
