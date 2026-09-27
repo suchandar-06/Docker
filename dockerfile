@@ -1,14 +1,13 @@
 # Use an official lightweight Node runtime
-FROM node:20-alpine
-
+FROM node
 # Set working directory
 WORKDIR /usr/src/app
 
 # Copy dependency manifests first for Docker caching
 COPY package*.json ./
 
-# Install only production dependencies
-RUN npm ci --omit=dev
+# Install dependencies
+RUN npm install
 
 # Copy the rest of the application files
 COPY . .
@@ -17,7 +16,6 @@ COPY . .
 EXPOSE 5000
 
 # Set environment defaults
-ENV NODE_ENV=production
 ENV PORT=5000
 
 # Start the application
