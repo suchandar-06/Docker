@@ -1,0 +1,18 @@
+---
+services:
+  recharge:
+    build: ./recharge/
+    container_name: recharge
+    ports:
+      - "1115:80"
+  billpayment:
+    build: ./billpayment/
+    container_name: billpayment
+    ports:
+      - "1116:80"
+  buygold:
+    build: ./buygold/
+    container_name: gold
+    ports:
+      - "1117:80"
+...
